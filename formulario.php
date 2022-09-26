@@ -23,7 +23,7 @@
                         <div class="alert alert-success">
                             Dados recebidos com sucesso!
                             <ul>
-                                <li><strong>Numero</strong>: <?php echo $numero ?>;</li>
+                                <li><strong>Número</strong>: <?php echo $numero ?>;</li>
                                 <li><strong>Nome</strong>: <?php echo $nome ?>;</li>
                                 <li><strong>CPF</strong>: <?php echo $cpf ?>;</li>
                                 <li><strong>Dia</strong>: <?php echo $dia ?>;</li>
@@ -31,7 +31,7 @@
                                 <li><strong>Ano</strong>: <?php echo $ano ?>;</li>
                                 <li><strong>Curso</strong>: <?php echo $curso ?>;</li>
                                 <?php // limpa o formulário.
-                                $nome = $cpf = $dia = $mes = $ano = $tipo = "";
+                                $nome = $cpf = $dia = $mes = $ano = $numero = "";
                                 ?>
                             </ul>
                         </div>

@@ -37,6 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $cpf = verifica_campo($_POST["cpf"]);
+        if (!valida_cpf($cpf)) {
+            $erro_cpf = "CPF inválido!";
+            $erro = true;
+        }
     }
 
     if (empty($_POST["dia"])) {
