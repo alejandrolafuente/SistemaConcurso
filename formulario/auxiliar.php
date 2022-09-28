@@ -43,11 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty($_POST["dia"])) {
-        $erro_dia = "Dia é obrigatório.";
+    if (empty($_POST["ano"])) {
+        $erro_ano = "Ano é obrigatório.";
         $erro = true;
     } else {
-        $dia = verifica_campo($_POST["dia"]);
+        $ano = verifica_campo($_POST["ano"]);
+        if (!valida_ano($ano)) {
+            $erro_ano = "Ano inválido! Por favor digite um ano posterior a  1900.";
+            $erro = true;
+        }
     }
 
     if (empty($_POST["mes"])) {
@@ -55,13 +59,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $mes = verifica_campo($_POST["mes"]);
+        if (!valida_mes($mes)) {
+            $erro_mes = "Mês inválido!";
+            $erro = true;
+        }
     }
 
-    if (empty($_POST["ano"])) {
-        $erro_ano = "Ano é obrigatório.";
+    if (empty($_POST["dia"])) {
+        $erro_dia = "Dia é obrigatório.";
         $erro = true;
     } else {
-        $ano = verifica_campo($_POST["ano"]);
+        $dia = verifica_campo($_POST["dia"]);
+        if (!valida_dia($dia)) {
+            $erro_dia = "Dia inválido!";
+            $erro = true;
+        }
     }
 
     if (empty($_POST["curso"])) {

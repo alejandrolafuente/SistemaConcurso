@@ -1,9 +1,10 @@
-<!--- Criamos a tabela Concurso--->
+<!--- Script que cria a DB  Concurso--->
 <?php
 require_once "credentials.php";
 
 // Cria a conexão
 $conn = mysqli_connect($servername, $username, $password);
+
 // Verifica a conexão
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -18,8 +19,6 @@ if (mysqli_query($conn, $sql)) {
     echo "Erro ao criar o DB: " . mysqli_error($conn);
 }
 
-echo "<br>";
 
-echo $dbname;
 
 mysqli_close($conn);
