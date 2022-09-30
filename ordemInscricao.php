@@ -2,9 +2,10 @@
 require_once "credentials.php";
 
 
-// Create connection
+// Cria conexão
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+
+// Verifica conexão
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -42,7 +43,7 @@ function ordena($vet, $t)
 $cont = 0;
 $vetor = array();
 
-$sql = "SELECT id, nome FROM Candidato";
+$sql = "SELECT id, num FROM Candidato";
 
 
 $result = mysqli_query($conn, $sql);
@@ -53,7 +54,7 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     while ($row = mysqli_fetch_assoc($result)) { // retorna uma linha a cada chamada
         $vetor[$cont] = new Candidato();
         $vetor[$cont]->id = $row["id"];
-        $vetor[$cont]->nome = $row["nome"];
+        $vetor[$cont]->nome = $row["num"];
         $cont = $cont + 1;
     }
 } else {
@@ -62,7 +63,7 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
 
 $vetor = ordena($vetor, $cont);
 
-// imprimimos o vetor:
+// imprime o vetor:
 /*for ($i = 0; $i < count($vetor); $i++) {
     echo $vetor[$i]->id . " ";
     echo $vetor[$i]->nome;
@@ -75,10 +76,10 @@ $vetor = ordena($vetor, $cont);
 
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);
-    $sql = "SELECT id, nome, num FROM Candidato WHERE id = '$cadeia'";
+    $sql = "SELECT id,num,nome FROM Candidato WHERE id = '$cadeia'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    echo "id: " . $row["id"] . "  - Nome: " . $row["nome"] . "Num: " . $row["num"] . "<br>";
+    echo "id: " . $row["id"] . "  " . " Num: " . $row["num"] . "  - Nome: " . $row["nome"] . "<br>";
 }
 
 mysqli_close($conn);

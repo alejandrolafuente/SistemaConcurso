@@ -1,6 +1,7 @@
 <?php
 require_once "credentials.php";
 
+
 // Cria a conexão:
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Verifica a conexão:
@@ -10,10 +11,11 @@ if (!$conn) {
 
 $myfile = fopen("cand.txt", "r") or die("Unable to open file!");
 
-$aux = 1;
+$aux = 0;
 while (!feof($myfile)) {
 
     $linha = fgets($myfile);
+
     $num =  substr($linha, 0, 4);
     $nome =  substr($linha, 4, 35);
     $cpf =  substr($linha, 39, 11);
@@ -29,7 +31,7 @@ while (!feof($myfile)) {
     $cargo = intval($cargo);
 
 
-    if ($aux == 1) {
+    if ($aux == 0) {
         $sql = "INSERT INTO Candidato (num, nome, cpf, ano, mes, dia, cargo)
         VALUES ($num,'$nome','$cpf','$ano','$mes','$dia',$cargo);";
     } else {
@@ -42,10 +44,12 @@ while (!feof($myfile)) {
 
 fclose($myfile);
 
+
 if (mysqli_multi_query($conn, $sql)) {
-    echo "Novos registros criados com sucesso!!";
+    echo "Registros inseridos com sucesso!!<br>";
 } else {
     echo "Erro ao inserir registros: " . $sql . "<br><br>" . mysqli_error($conn);
 }
 
+echo "Total de registros iseridos: " . $aux;
 mysqli_close($conn);

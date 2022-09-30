@@ -1,8 +1,10 @@
+<!--- Script que cria a tabela Candidato no BD Concurso--->
 <?php
 require_once "credentials.php";
 
 // Cria conexão
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 // Verifica conexão
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -27,7 +29,8 @@ $sql = "CREATE TABLE Candidato (
   som   INT,
   clg   INT,
   clc   INT,
-  ccl   INT
+  ccl   INT,
+  falta INT
 )";
 
 if (mysqli_query($conn, $sql)) {
