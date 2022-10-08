@@ -1,30 +1,16 @@
- <?php
-   $nota = "90";
-   $st = " ";
-   str_pad($nota, 10, $st, STR_PAD_LEFT);
-   echo $nota;
-   /*$num = 9;
-    $cad = strval($num);
+<?php
+require_once "credentials.php";
 
-    $cad = str_pad($cad, 4, ' ', STR_PAD_LEFT);
+// O ATRIBUTO "id" DO BD GUARDA A 'POSIÇÃO FÍSICA' DO REGISTRO, É NOSSA REFERÊNCIA
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    echo $cad;
-    $x = 100;
-    $y = 30;
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+$contclger = 1;
+$sql = "UPDATE Candidato SET clg = 1 WHERE id = '13';";
+$result = mysqli_query($conn, $sql);
 
-    echo intval($x / $y);
-
-
-
-    $string = 'I am happy today.';
- $replacement = 'very ';
-
- echo substr_replace($string, $replacement, 5, 0);
- $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
- $txt = "John Doe\n";
- fwrite($myfile, $txt);
- $txt = "Jane Doe\n";
- fwrite($myfile, $txt);
- fclose($myfile);*/
-
-   ?>
+mysqli_close($conn);

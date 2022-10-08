@@ -25,9 +25,7 @@ while (!feof($myfile)) {
     $cargo =  substr($linha, 58, 2);
 
     $num = intval($num);
-    $ano = intval($ano);
-    $mes = intval($mes);
-    $dia = intval($dia);
+
     $cargo = intval($cargo);
 
 

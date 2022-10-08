@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require_once "credentials.php";
 
@@ -46,9 +47,16 @@ fclose($myfile);
 
 
 if (mysqli_multi_query($conn, $sql)) {
-    echo "Notas inseridas com sucesso!!<br>";
+    echo "Notas inseridas com sucesso!!<br><br>";
 } else {
     echo "Erro ao inserir notas: " . $sql . "<br><br>" . mysqli_error($conn);
 };
 
 mysqli_close($conn);
+echo "Vejamos como ficam as médias por disciplina:" . "<br><br>";
+echo "LÍNGUA ESTRANGEIRA MODERNA:" . $soma[0] / $cont . "<br>";
+echo "MATEMÁTICA:" . $soma[1] / $cont . "<br>";
+echo "LÓGICA:" . $soma[2] / $cont . "<br>";
+echo "CONHECIMENTOS ESPECÍFICOS:" . $soma[3] / $cont . "<br>";
+echo "INFORMÁTICA:" . $soma[4] / $cont . "<br>";
+echo "ATUALIDADES" . $soma[5] / $cont . "<br>";
