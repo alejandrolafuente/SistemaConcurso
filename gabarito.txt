@@ -6,3 +6,5 @@ Este é o gabarito que escolhemos, corresponde ao candidato:
 0142GABRIEL MENDES TULIO               12748870895 10 07 1988 11
 
 Este candidato está na posição 13 do BD, ou seja, no id=13
+
+

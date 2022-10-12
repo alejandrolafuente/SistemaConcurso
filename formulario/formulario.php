@@ -29,7 +29,7 @@
                                 <li><strong>Dia</strong>: <?php echo intval($dia) ?>;</li>
                                 <li><strong>Mes</strong>: <?php echo intval($mes) ?>;</li>
                                 <li><strong>Ano</strong>: <?php echo intval($ano) ?>;</li>
-                                <li><strong>Curso</strong>: <?php echo intval($curso) ?>;</li>
+                                <li><strong>Cargo</strong>: <?php echo intval($curso) ?>;</li>
                                 <?php // limpa o formulário.
                                 $nome = $cpf = $dia = $mes = $ano = $numero = "";
                                 ?>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
 
-                    <h2>Escolha seu curso:</h2>
+                    <h2>Escolha seu cargo:</h2>
 
 
                     <select name="curso">

@@ -1,4 +1,4 @@
-﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md
+﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md, onde explicamos o projeto propriamente.
 
 1. PROBLEMA: Será realizado um sistema para gerenciar um concurso para preenchimento de vagas em 12 cargos, para até 9999 (nove mil novecentos e noventa e nove) candidatos, conforme especificação a seguir:
 
@@ -26,7 +26,9 @@
 
              11               Gestor de borboletas               17
 
-             12               Agente leva e traz                 20      
+             12               Agente leva e traz                 20 
+
+                                                      TOTAL VAGAS: 203     
 
 
 2. O concurso será realizado num único dia, e será aplicada uma prova de múltipla escolha com um total de 60 questões, com as disciplinas distribuidas da seguinte maneira:
@@ -58,7 +60,12 @@
       - Maior nota em L.E.M             (1)
       - Maior IDADE
 
-4. O cadastro inicial (formulário) deverá conter:
+4. O cadastro inicial (via formulário) deverá conter:
 
-      - Número de inscrição (4 dígitos) -------- VALIDAR (1 até 9999)
-      - 
+      - Número de inscrição (4 dígitos)   -------------- VALIDAR (1 até 9999)
+      - Nome do candidato (35 caracteres)
+      - CPF (11 dígitos)-------------------------------- VALIDAR
+      - Data de nascimento (8 dígitos) ----------------- VALIDAR
+      - Cargo escolhido (código do cargo, 2 digitos)---- VALIDAR
+
+5. Elabore um sistema WEB com Banco de Dados para administrar este concurso (leia o arquivo INSTRUCOES.md)

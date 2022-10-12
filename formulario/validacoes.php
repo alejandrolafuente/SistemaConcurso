@@ -51,15 +51,17 @@ function valida_mes($mes)
 
 function diaMax($ano, $mes)
 {
-    return 31;
+
     if (($mes == 4) or ($mes == 6) or ($mes == 9) or ($mes == 11)) {
         return 30;
-    }
-    if ($mes == 2) {
-        return 28;
+    } elseif ($mes == 2) {
         if (($ano % 4) == 0) {
             return 29;
+        } else {
+            return 28;
         }
+    } else {
+        return 31;
     }
 }
 
@@ -71,8 +73,9 @@ function valida_dia($dia)
     global $mes_inteiro;
 
     $dia_inteiro = intval($dia);
+    $dia_maximo = diaMax($ano_inteiro, $mes_inteiro);
 
-    if (($dia_inteiro < 1) or ($dia_inteiro > diaMax($ano_inteiro, $mes_inteiro))) {
+    if (($dia_inteiro < 1) or ($dia_inteiro > $dia_maximo)) {
         return false;
     } else {
         return true;

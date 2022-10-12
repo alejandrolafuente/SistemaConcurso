@@ -103,6 +103,7 @@ $contcla = 0; // conta o número de classificados
 
 $cont = 0;
 $contcla = 0;
+echo "id--cargo--clas.geral<br><br>";
 for ($i = count($vetor) - 1; $i >= 0; $i--) {
     $cadeia = strval($vetor[$i]->id);
     $sql = "SELECT cargo FROM Candidato WHERE id = '$cadeia'";
