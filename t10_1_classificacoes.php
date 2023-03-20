@@ -44,7 +44,10 @@ $cont = 0;
 $vetor = array();
 $dataFutura = 20200101;
 
-$sql = "SELECT id,ano,mes,dia,nota1,nota2,nota3,nota4,nota5,nota6,som,falta FROM Candidato";
+$sql = "SELECT Candidato.id,Candidato.ano,Candidato.mes,Candidato.dia,Candidato.falta,
+        Notas.nota1,Notas.nota2,Notas.nota3,Notas.nota4,Notas.nota5,Notas.nota6,
+        Notas.somaNotas
+        FROM Candidato INNER JOIN Notas ON Candidato.numInscricao=Notas.Num";
 
 
 $result = mysqli_query($conn, $sql);
@@ -57,7 +60,7 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
             $vetor[$cont] = new Candidato();
             $vetor[$cont]->id = $row["id"];
 
-            $som = strval($row["som"]);
+            $som = strval($row["somaNotas"]);
             $som = str_pad($som, 3, ' ', STR_PAD_LEFT);
             $nota1 = strval($row["nota1"]);
             $nota1 = str_pad($nota1, 3, ' ', STR_PAD_LEFT);
@@ -84,15 +87,14 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     echo "0 resultados";
 }
 
-
 $vetor = ordena($vetor, $cont);
 
-// imprime o vetor em ordem decrescente:
-/*for ($i = count($vetor) - 1; $i >= 0; $i--) {
+// imprime o vetor em ordem DECRESCENTE:
+for ($i = count($vetor) - 1; $i >= 0; $i--) {
     echo $vetor[$i]->id . " ";
     echo $vetor[$i]->campoChave;
     echo "<br>";
-}*/
+}
 
 // ==> Agora vamos percorrer o vetor e acessar o BD através dele, e fazer os 
 // UPDATES dos campos clg, clc e ccl

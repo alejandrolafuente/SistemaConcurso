@@ -24,9 +24,9 @@ Os outros arquivos dentro da pasta "formulario", "validacoes.php", "auxiliar.php
 
 2. Evidentemente, não temos como simular este projeto sem a ajuda de arquivos. O que faremos agora, é simular o sistema para 1473 candidatos inscritos, utilizando arquivos e criando antes o BD com sua respectiva tabela. Siga as instruções a seguir:
 
-2.1 Antes de qualquer coisa, criaremos o Banco de Dados. Para isto, execute o arquivo "cria_db.php". Este código cria o BD "Concurso". Não esqueça de preencher a variável $password no arquivo credentials.php com sua senha!
+2.1 Antes de qualquer coisa, criaremos o Banco de Dados. Para isto, execute o arquivo "criaBD.php". Este código cria o BD "Concurso". Não esqueça de preencher a variável $password no arquivo credentials.php com sua senha!
 
-2.2 Rode o arquivo "cria_tabela_candidato.php". Este código cria a tabela "Candidato" dentro do BD "Concurso". Optamos por utilizar uma única tabela, o projeto está sendo revisado para melhorá-lo!
+2.2 Rode o arquivo "criaTabelas.php". Este código cria as tabelas "Candidato" e "Notas" dentro do BD "Concurso". Optamos por utilizar duas tabelas para ete projeto.
 
 2.3 Agora, vamos inserir os dados dos 1473 candidatos no BD. Rode o arquivo "insere_registros.php". Este código conecta ao BD, abre o arquivo texto "cand.txt", extrai os dados que o candidato digitaria no formulário, faz a conversão para os tipos especificados na tabela caso seja necessário, e grava no BD. Vejamos um exemplo utilizando o primeiro registro do arquivo cand.txt, e prestemos atenção a seu formato:
 

@@ -79,7 +79,7 @@ $cargos = [
 $cont = 1;
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);
-    $sql = "SELECT nome,num,cargo,ccl FROM Candidato WHERE id = '$cadeia'";
+    $sql = "SELECT nome,numInscricao,cargo,ccl FROM Candidato WHERE id = '$cadeia'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $cargo = $row["cargo"];

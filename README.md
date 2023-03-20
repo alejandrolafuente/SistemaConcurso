@@ -1,32 +1,32 @@
-﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md, onde explicamos o projeto propriamente.
+﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md, onde explicamos como executar o projeto passo a passo.
 
 1. PROBLEMA: Será realizado um sistema para gerenciar um concurso para preenchimento de vagas em 12 cargos, para até 9999 (nove mil novecentos e noventa e nove) candidatos, conforme especificação a seguir:
 
-      CÓDIGO  DO CARGO        DESCRIÇÃO DO CARGO         NÚMERO DE VAGAS
+      CÓDIGO  DO CARGO ---- DESCRIÇÃO DO CARGO ----- NÚMERO DE VAGAS
 
-             1                Enganador de chefe                 20
+             1                Programador PHP                    20
 
-             2                Enrolador de trabalho              15
+             2                Desenvolvedor Web Full Stack       15
 
-             3                Pensador                           17
+             3                Programador Java                   17
 
-             4                Analista de sistemas               18
+             4                Programador Python                 18
 
-             5                Degustador de cerveja              15
+             5                Programador C++                    15
 
-             6                Técnico em redes                   20
+             6                Desenvolvedor front-end            20
 
-             7                Contador de estórias               14
+             7                Desenvolvedor back-end             14
 
-             8                Sai da aula antes                  12
+             8                Analista de Infraestrutura         12
 
-             9                Açougueiro limpinho                17
+             9                Analista de Suporte                17
 
-             10               Segurança de banheiro              18
+             10               Analista de redes                  18
 
-             11               Gestor de borboletas               17
+             11               Analista de Cyber Security         17
 
-             12               Agente leva e traz                 20 
+             12               Engenheiro de Cloud Computing      20 
 
                                                       TOTAL VAGAS: 203     
 

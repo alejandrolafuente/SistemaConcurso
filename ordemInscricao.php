@@ -43,7 +43,7 @@ function ordena($vet, $t)
 $cont = 0;
 $vetor = array();
 
-$sql = "SELECT id, num FROM Candidato";
+$sql = "SELECT id, numInscricao FROM Candidato";
 
 
 $result = mysqli_query($conn, $sql);
@@ -54,7 +54,7 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     while ($row = mysqli_fetch_assoc($result)) { // retorna uma linha a cada chamada
         $vetor[$cont] = new Candidato();
         $vetor[$cont]->id = $row["id"];
-        $vetor[$cont]->nome = $row["num"];
+        $vetor[$cont]->nome = $row["numInscricao"];
         $cont = $cont + 1;
     }
 } else {
@@ -76,10 +76,10 @@ $vetor = ordena($vetor, $cont);
 
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);
-    $sql = "SELECT id,num,nome FROM Candidato WHERE id = '$cadeia'";
+    $sql = "SELECT id,numInscricao,nome FROM Candidato WHERE id = '$cadeia'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    echo "id: " . $row["id"] . "  " . " Num: " . $row["num"] . "  - Nome: " . $row["nome"] . "<br>";
+    echo "id: " . $row["id"] . "  " . " Num: " . $row["numInscricao"] . "  - Nome: " . $row["nome"] . "<br>";
 }
 
 mysqli_close($conn);

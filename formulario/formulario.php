@@ -20,6 +20,12 @@
 
                 <?php if ($_SERVER["REQUEST_METHOD"] == "POST") : ?>
                     <?php if (!$erro) : ?>
+                        <?php $cargos = array(
+                            "ENGANADOR DE CHEFE", "ENROLADOR DE TRABALHO", "PENSADOR",
+                            "ANALISTA DE SISTEMAS", "DEGUSTADOR DE CERVEJA", "TECNICO EM REDES",
+                            "CONTADOR DE ESTORIAS", "SAI DA AULA ANTES", "AÇOUGUEIRO LIMPINHO",
+                            "SEGURANÇA DE BANHEIRO", "GESTOR DE BORBOLETAS", "AGENTE LEVA E TRAZ"
+                        ); ?>
                         <div class="alert alert-success">
                             Dados recebidos com sucesso!
                             <ul>
@@ -29,7 +35,7 @@
                                 <li><strong>Dia</strong>: <?php echo intval($dia) ?>;</li>
                                 <li><strong>Mes</strong>: <?php echo intval($mes) ?>;</li>
                                 <li><strong>Ano</strong>: <?php echo intval($ano) ?>;</li>
-                                <li><strong>Cargo</strong>: <?php echo intval($curso) ?>;</li>
+                                <li><strong>Cargo</strong>: <?php echo $cargos[intval($cargo - 1)] ?>;</li>
                                 <?php // limpa o formulário.
                                 $nome = $cpf = $dia = $mes = $ano = $numero = "";
                                 ?>
@@ -121,21 +127,20 @@
                     <h2>Escolha seu cargo:</h2>
 
 
-                    <select name="curso">
-                        <option value="01">1 - ENGANADOR DE CHEFE</option>
-                        <option value="02">2 - ENROLADOR DE TRABALHO</option>
-                        <option value="03">3 - PENSADOR</option>
-                        <option value="04">4 - ANALISTA DE SISTEMAS</option>
-                        <option value="05">5 - DEGUSTADOR DE CERVEJA</option>
-                        <option value="06">6 - TECNICO EM REDES</option>
-                        <option value="07">7 - CONTADOR DE ESTORIAS</option>
-                        <option value="08">8 - SAI DA AULA ANTES</option>
-                        <option value="09">9 - AÇOUGUEIRO LIMPINHO</option>
+                    <select name="cargo">
+                        <option value="1">1 - ENGANADOR DE CHEFE</option>
+                        <option value="2">2 - ENROLADOR DE TRABALHO</option>
+                        <option value="3">3 - PENSADOR</option>
+                        <option value="4">4 - ANALISTA DE SISTEMAS</option>
+                        <option value="5">5 - DEGUSTADOR DE CERVEJA</option>
+                        <option value="6">6 - TECNICO EM REDES</option>
+                        <option value="7">7 - CONTADOR DE ESTORIAS</option>
+                        <option value="8">8 - SAI DA AULA ANTES</option>
+                        <option value="9">9 - AÇOUGUEIRO LIMPINHO</option>
                         <option value="10">10 - SEGURANÇA DE BANHEIRO</option>
                         <option value="11">11 - GESTOR DE BORBOLETAS</option>
                         <option value="12">12 - AGENTE LEVA E TRAZ</option>
                     </select><br><br>
-
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

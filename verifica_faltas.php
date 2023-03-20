@@ -12,7 +12,7 @@ if (!$conn) {
 
 
 
-$sql = "SELECT num, nome FROM Candidato WHERE falta=1;";
+$sql = "SELECT numInscricao, nome FROM Candidato WHERE falta=1;";
 
 
 $result = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@ $i = 0;
 if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     // Dados de saída de cada linha
     while ($row = mysqli_fetch_assoc($result)) { // retorna uma linha a cada chamada
-        $vetor[$i] =  $row["num"];
+        $vetor[$i] =  $row["numInscricao"];
         $i = $i + 1;
     }
 } else {

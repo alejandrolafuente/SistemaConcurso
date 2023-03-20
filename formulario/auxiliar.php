@@ -1,5 +1,13 @@
-<?php include "validacoes.php"; ?>
 <?php
+
+ini_set('display_errors', 1);
+
+require_once  'ValidaNumero.php';
+require_once  'ValidaCPF.php';
+require_once  'ValidaAno.php';
+require_once  'ValidaMes.php';
+require_once  'ValidaDia.php';
+
 function verifica_campo($texto)
 {
     $texto = trim($texto);
@@ -18,12 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $numero = verifica_campo($_POST["numero"]);
-        if (!valida_numero($numero)) {
+        $num = intval($numero);
+        $validadorNumInscricao = new ValidaNumero($num);
+        $respostaNum = $validadorNumInscricao->valida();
+        if (!$respostaNum) {
             $erro_numero = "Número de inscrição inválido!";
             $erro = true;
         }
     }
-
 
     if (empty($_POST["nome"])) {
         $erro_nome = "Nome é obrigatório.";
@@ -37,7 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $cpf = verifica_campo($_POST["cpf"]);
-        if (!valida_cpf($cpf)) {
+        $validadorDeCPF = new ValidaCPF($cpf);
+        $respostaCPF = $validadorDeCPF->valida();
+        if (!$respostaCPF) {
             $erro_cpf = "CPF inválido!";
             $erro = true;
         }
@@ -48,7 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $ano = verifica_campo($_POST["ano"]);
-        if (!valida_ano($ano)) {
+        $ano = intval($ano);
+        $validadorAnoNascimento = new ValidaAno($ano);
+        $respostaAno = $validadorAnoNascimento->valida();
+        if (!$respostaAno) {
             $erro_ano = "Ano inválido! Por favor digite um ano posterior a  1900.";
             $erro = true;
         }
@@ -59,7 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $mes = verifica_campo($_POST["mes"]);
-        if (!valida_mes($mes)) {
+        $mes = intval($mes);
+        $validadorMesNascimento = new ValidaMes($mes);
+        $respostaMes = $validadorMesNascimento->valida();
+        if (!$respostaMes) {
             $erro_mes = "Mês inválido!";
             $erro = true;
         }
@@ -70,16 +88,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     } else {
         $dia = verifica_campo($_POST["dia"]);
-        if (!valida_dia($dia)) {
+        $dia = intval($dia);
+        $validadorDiaNascimento = new ValidaDia($dia, $validadorAnoNascimento->getAno(), $validadorMesNascimento->getMes());
+        $respostaDia = $validadorDiaNascimento->valida();
+        if (!$respostaDia) {
             $erro_dia = "Dia inválido!";
             $erro = true;
         }
     }
 
-    if (empty($_POST["curso"])) {
-        $erro_ano = "Curso é obrigatório.";
+    if (empty($_POST["cargo"])) {
+        $erro_cargo = "Cargo é obrigatório.";
         $erro = true;
     } else {
-        $curso = $_POST["curso"];
+        $cargo = $_POST["cargo"];
     }
 }

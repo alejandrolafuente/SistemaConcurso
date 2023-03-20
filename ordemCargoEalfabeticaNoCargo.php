@@ -52,11 +52,11 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     while ($row = mysqli_fetch_assoc($result)) { // retorna uma linha a cada chamada
         $vetor[$cont] = new Candidato();
         $vetor[$cont]->id = $row["id"];
-        $aux2 = strval($row["cargo"]);
-        if (strlen($aux2) < 2) {
-            $aux2 = "0" . $aux2;
+        $cargo = strval($row["cargo"]);
+        if (strlen($cargo) < 2) {
+            $cargo = "0" . $cargo;
         };
-        $vetor[$cont]->nome = $aux2 . $row["nome"];
+        $vetor[$cont]->nome = $cargo . $row["nome"];
         $cont = $cont + 1;
     }
 } else {
@@ -66,15 +66,14 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
 $vetor = ordena($vetor, $cont);
 
 // imprime o vetor:
-/*for ($i = 0; $i < count($vetor); $i++) {
-    echo $vetor[$i]->id . " ";
-    echo $vetor[$i]->nome;
-    echo "<br>";
-}*/
+// for ($i = 0; $i < count($vetor); $i++) {
+//     echo $vetor[$i]->id . " ";
+//     echo $vetor[$i]->nome;
+//     echo "<br>";
+// }
 
 // ==> Agora vamos percorrer o vetor e acessar o BD através dele, PARA ESTE CASO
 // DE IMPRIMIR EM ORDEM ALFABÉTICA!!!!
-
 
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);

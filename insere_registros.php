@@ -12,6 +12,7 @@ if (!$conn) {
 $myfile = fopen("cand.txt", "r") or die("Unable to open file!");
 
 $aux = 0;
+
 while (!feof($myfile)) {
 
     $linha = fgets($myfile);
@@ -30,10 +31,10 @@ while (!feof($myfile)) {
 
 
     if ($aux == 0) {
-        $sql = "INSERT INTO Candidato (num, nome, cpf, ano, mes, dia, cargo)
+        $sql = "INSERT INTO Candidato (numInscricao, nome, cpf, ano, mes, dia, cargo)
         VALUES ($num,'$nome','$cpf','$ano','$mes','$dia',$cargo);";
     } else {
-        $sql .= "INSERT INTO Candidato (num, nome, cpf, ano, mes, dia, cargo)
+        $sql .= "INSERT INTO Candidato (numInscricao, nome, cpf, ano, mes, dia, cargo)
         VALUES ($num,'$nome','$cpf','$ano','$mes','$dia',$cargo);";
     }
 

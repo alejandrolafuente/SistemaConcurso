@@ -75,14 +75,14 @@ $anterior = 0;
 
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);
-    $sql = "SELECT nome,num,ano,mes,dia,cargo FROM Candidato WHERE id = '$cadeia'";
+    $sql = "SELECT nome,numInscricao,ano,mes,dia,cargo FROM Candidato WHERE id = '$cadeia'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     if ($anterior != $row["cargo"]) {
         echo "<br><br>";
     }
     $anterior = $row["cargo"];
-    echo $row["cargo"] . "--" . "Num:" . $row["num"] . "--Nome: " . $row["nome"] . "  --Nascimento:" . $row["dia"] . "/" . $row["mes"] . "/" . $row["ano"] .  "<br>";
+    echo $row["cargo"] . "--" . "Num:" . $row["numInscricao"] . "--Nome: " . $row["nome"] . "  --Nascimento:" . $row["dia"] . "/" . $row["mes"] . "/" . $row["ano"] .  "<br>";
 }
 
 mysqli_close($conn);

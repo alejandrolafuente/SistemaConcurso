@@ -19,9 +19,9 @@ while (!feof($myfile)) {
     $aux = strval($num);
 
     if ($cont == 0) {
-        $sql = "UPDATE Candidato SET falta = 1 WHERE num = '$aux' ;";
+        $sql = "UPDATE Candidato SET falta = 1 WHERE numInscricao = '$aux' ;";
     } else {
-        $sql .= "UPDATE Candidato SET falta = 1 WHERE num = '$aux' ;";
+        $sql .= "UPDATE Candidato SET falta = 1 WHERE numInscricao = '$aux' ;";
     }
 
     $cont = $cont + 1;
@@ -32,6 +32,7 @@ fclose($myfile);
 
 if (mysqli_multi_query($conn, $sql)) {
     echo "Faltas inseridas com sucesso!!<br>";
+    echo "Total de candidato ausentes: " . $cont;
 } else {
     echo "Erro ao inserir faltas: " . $sql . "<br><br>" . mysqli_error($conn);
 };

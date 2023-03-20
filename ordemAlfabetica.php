@@ -49,6 +49,7 @@ $sql = "SELECT id, nome FROM Candidato";
 $result = mysqli_query($conn, $sql);
 
 // Montamos o vetor:
+
 if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
     // Dados de saída de cada linha
     while ($row = mysqli_fetch_assoc($result)) { // retorna uma linha a cada chamada
@@ -63,12 +64,12 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
 
 $vetor = ordena($vetor, $cont);
 
-// imprime o vetor:
-/*for ($i = 0; $i < count($vetor); $i++) {
-    echo $vetor[$i]->id . " ";
-    echo $vetor[$i]->nome;
-    echo "<br>";
-}*/
+// imprime o vetor ordenado:
+// for ($i = 0; $i < count($vetor); $i++) {
+//     echo $vetor[$i]->id . " ";
+//     echo $vetor[$i]->nome;
+//     echo "<br>";
+// }
 
 // ==> Agora vamos percorrer o vetor e acessar o BD através dele, PARA ESTE CASO
 // DE IMPRIMIR EM ORDEM ALFABÉTICA!!!!
@@ -76,10 +77,10 @@ $vetor = ordena($vetor, $cont);
 
 for ($i = 0; $i < count($vetor); $i++) {
     $cadeia = strval($vetor[$i]->id);
-    $sql = "SELECT id, nome, num FROM Candidato WHERE id = '$cadeia'";
+    $sql = "SELECT id, nome, numInscricao FROM Candidato WHERE id = '$cadeia'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    echo "id: " . $row["id"] . "  - Nome: " . $row["nome"] . "Num: " . $row["num"] . "<br>";
+    echo "id: " . $row["id"] . "  - Nome: " . $row["nome"] . " Num: " . $row["numInscricao"] . "<br>";
 }
 
 mysqli_close($conn);
