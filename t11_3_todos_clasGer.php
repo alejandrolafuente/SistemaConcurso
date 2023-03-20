@@ -70,10 +70,10 @@ if (mysqli_num_rows($result) > 0) { // quantas linhas tem a variável $result?
 $vetor = ordena($vetor, count($vetor));
 
 $cargos = [
-    "", "ENGANADOR DE CHEFE", "ENROLADOR DE TRABALHO", "PENSADOR",
-    "ANALISTA DE SISTEMAS", "DEGUSTADOR DE CERVEJA", "TÉCNICO EM REDES", "CONTADOR DE ESTÓRIAS",
-    "SAI DA AULA ANTES", "AÇOUGUEIRO LIMPINHO", "SEGURANÇA DE BANHEIRO", "GESTOR DE BORBOLETAS",
-    "AGENTE LEVA E TRAZ"
+    "", "Programador PHP", "Desenvolvedor Web Full Stack", "Programador Java",
+    "Programador Python", "Programador C++", "Desenvolvedor front-end", "Desenvolvedor back-end",
+    "Analista de Infraestrutura", "Analista de Suporte", "Analista de redes", "Analista de Cyber Security",
+    "Engenheiro de Cloud Computing"
 ];
 
 $cont = 1;

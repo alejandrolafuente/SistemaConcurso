@@ -1,8 +1,11 @@
-﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md, onde explicamos como executar o projeto passo a passo.
+﻿ATENÇÃO: Caso tenha interesse em explorar este projeto, por favor leia este texto antes. Aqui apresentamos o enunciado do problema. Após ler este arquivo com o enunciado, leia o arquivo INSTRUCOES.md, onde explicamos como executar o projeto passo a passo. Este projeto foi inicialmente implementado
+com a linguagem PHP e em sua maior parte utilizando o paradigma estruturado (procedural), e está sendo
+reestruturado utilizando orientação a objetos. A estruturação do front-end com JavaScript, CSS e HTML
+também está sendo elaborada.
 
 1. PROBLEMA: Será realizado um sistema para gerenciar um concurso para preenchimento de vagas em 12 cargos, para até 9999 (nove mil novecentos e noventa e nove) candidatos, conforme especificação a seguir:
 
-      CÓDIGO  DO CARGO ---- DESCRIÇÃO DO CARGO ----- NÚMERO DE VAGAS
+      CÓDIGO  DO CARGO ------- DESCRIÇÃO DO CARGO -------- NÚMERO DE VAGAS
 
              1                Programador PHP                    20
 
